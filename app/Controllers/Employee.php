@@ -11,12 +11,14 @@ class Employee extends ResourceController
     // all users
     public function index(){
       $model = new EmployeeModel();
-      $data['employees'] = $model->orderBy('id', 'DESC')->findAll();
+      $data['employees'] = $model->orderBy('customer_id', 'DESC')->findAll();
+      $data['tmp'] = $model->test_q();
+      $data['tmp2'] = $model->customer_offers();
       return $this->respond($data);
     }
 
     // single user
-    public function show($id = null){
+    public function show($id = null) {
         $model = new EmployeeModel();
         $data = $model->where('id', $id)->first();
         if($data){
