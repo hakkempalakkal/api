@@ -202,4 +202,9 @@ class Auth extends BaseController
         $obj->customer = $customer;
         return $obj;
     }
+
+    private function testabc()
+    {
+        //test for abc
+    }
 }
